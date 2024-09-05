@@ -20,11 +20,11 @@ with col2:
 
 col1, col2, col3 = st.columns(3)
 with col1:
-    cut1_percentaje_input = st.number_input(label="% cut 1")
+    cut1_percentaje_input = st.number_input(label="% cut 1", value=30)
 with col2:
-    cut2_percentaje_input = st.number_input(label="% cut 2")
+    cut2_percentaje_input = st.number_input(label="% cut 2", value=35)
 with col3:
-    cut3_percentaje_input = st.number_input(label="% cut 3")
+    cut3_percentaje_input = st.number_input(label="% cut 3", value=35)
 
 if st.button("Save course"):
     try:    
@@ -38,7 +38,8 @@ if st.button("Save course"):
             cut2_percentaje=cut2_percentaje_input,
             cut3_percentaje=cut3_percentaje_input,
         )
-        st.write(course)
+
+        st.write("Course info", vars(course))
         st.session_state.courses_list.append(course)
     except ValueError as e:
         st.error(e)

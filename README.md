@@ -18,6 +18,7 @@ Create file *requirements.txt*
 ```bash
     chmod +x run_mac.sh
     ./run_mac.sh
+    streamlit run main.py
 ```
 
 
