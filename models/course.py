@@ -1,7 +1,9 @@
 import datetime
 
+from base.base_model import BaseModelWithRequiredString
+
 #Class
-class Course:
+class Course(BaseModelWithRequiredString):
 
     #Constructor method
     def __init__(self, code, name, start_date, end_date, cut1_percentaje, cut2_percentaje, cut3_percentaje):
@@ -31,10 +33,7 @@ class Course:
     
     @code.setter
     def code(self, value: str):
-        trimmed_value = value.strip() if value is not None else value
-        if not trimmed_value or len(trimmed_value) == 0:
-            raise ValueError("code cannot be empty")
-        self._code = trimmed_value
+        self._code = self.validate_req_str_value(property_name="code", value=value)
 
     @property
     def name(self):
@@ -42,10 +41,7 @@ class Course:
     
     @name.setter
     def name(self, value: str):
-        trimmed_value = value.strip() if value is not None else value
-        if not trimmed_value or len(trimmed_value) == 0:
-            raise ValueError("name cannot be empty")
-        self._name = trimmed_value
+        self._name = self.validate_req_str_value(property_name="name", value=value)
 
     @property
     def cut1_percentaje(self):
