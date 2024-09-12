@@ -1,0 +1,33 @@
+
+Buscar un problema o una empresa.
+
+Calendario:
+    - Asesoria: 18 de septiembre. Es obgligatorio asistir a la asesoria. Se tomara asistencia
+    - Subir el proyecto a GitHub a mas tardar el dia 23 de septiembre. Por cada dia de retraso se descontara 1.5 de la nota final del proyecto
+    - Sustentacion el dia 25 de septiembre
+
+Parmetros de entrega:
+    - Utilizar Python
+
+    - Utilizar Streamlit para la GUI
+        - Crear al menos 3 paginas
+        - Una de las paginas debe tener al menos 5 calculos matematicos (sumas, restas, promedios, divisiones, porcentajes). ejemplo: Total price: 45.0
+
+    - Implementar los pilares de la programacion orientada a objetos:
+        Minimo 5 clases que se relacionen entre si
+        objetos
+        atributos (string, fecha, numericos, booleanos, objetos)
+        metodo constructor
+        metodos
+        encapsulamiento
+        herencia
+        polimorfismo
+
+    - Incluir validaciones y manejo de errores
+
+    - No se permiten agregar comentarios al codigo
+
+Calificacion
+    - Trabajo funcionando: 35%: Se tiene en cuenta ortografia
+    - Sustentacion: 65%
+
