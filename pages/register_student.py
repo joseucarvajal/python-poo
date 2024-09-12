@@ -27,5 +27,7 @@ if st.button("Save student"):
 
 if student:
     st.header(f"Add course to student {student.name}")
+
+    #polimorphism
     st.selectbox(label="Choose a course", options=[course.name for course in st.session_state.courses_list]
 )

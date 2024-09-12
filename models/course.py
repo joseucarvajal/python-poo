@@ -1,12 +1,20 @@
 import datetime
-
 from base.base_model import BaseModelWithRequiredString
 
 #Class
 class Course(BaseModelWithRequiredString):
 
     #Constructor method
-    def __init__(self, code, name, start_date, end_date, cut1_percentaje, cut2_percentaje, cut3_percentaje):
+    def __init__(
+            self, 
+            code, 
+            name, 
+            start_date, 
+            end_date, 
+            cut1_percentaje, 
+            cut2_percentaje, 
+            cut3_percentaje, 
+            price):
         self.code = code
         self.name = name
         self.start_date = start_date
@@ -14,6 +22,7 @@ class Course(BaseModelWithRequiredString):
         self.cut1_percentaje = cut1_percentaje 
         self.cut2_percentaje = cut2_percentaje
         self.cut3_percentaje = cut3_percentaje
+        self.price = price
         self.are_cuts_valid()
         self.are_dates_valid()
 
@@ -25,6 +34,7 @@ class Course(BaseModelWithRequiredString):
     _cut1_percentaje: float #as private attribute
     _cut2_percentaje: float #as private attribute
     _cut3_percentaje: float #as private attribute
+    _price: float
 
     #encapsulation:
     @property
@@ -72,6 +82,16 @@ class Course(BaseModelWithRequiredString):
         if value < 0:
             raise ValueError("cut 3 percentaje cannot be negative")
         self._cut3_percentaje = value
+
+    @property
+    def price(self):
+        return self._price
+    
+    @price.setter
+    def price(self, value: float):
+        if value < 0:
+            raise ValueError("Prices cannot be a negative value")
+        self._price = value
     
     #Methods
     def are_cuts_valid(self):
@@ -82,3 +102,7 @@ class Course(BaseModelWithRequiredString):
         if self.start_date > self.end_date:
             #Error handling
             raise ValueError("The start date should be lesser than the end date")
+
+    def get_final_price(self):
+        return self.price
+    
